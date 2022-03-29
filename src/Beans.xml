@@ -1,0 +1,25 @@
+<?xml version = "1.0" encoding = "UTF-8"?>
+
+<beans xmlns = "http://www.springframework.org/schema/beans"
+   xmlns:xsi = "http://www.w3.org/2001/XMLSchema-instance"
+   xmlns:context = "http://www.springframework.org/schema/context"
+   xsi:schemaLocation = "http://www.springframework.org/schema/beans
+      http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+      http://www.springframework.org/schema/context
+      http://www.springframework.org/schema/context/spring-context-3.0.xsd">
+      
+      <bean id="foo" class="com.sample.Foo" scope="prototype">
+      <constructor-arg index="0" value="foo name?"></constructor-arg>
+      </bean>
+      <bean id="bar" class="com.sample.Bar">
+      <constructor-arg type="int" value="22"></constructor-arg>
+      <constructor-arg type="java.lang.String" value="AishP"></constructor-arg>
+		<property name="foo" ref="foo"></property>
+      </bean>
+      <bean id="refreshedeventhandler" class="com.sample.EventHandlingDemo"></bean>
+      
+      <bean id="TransactionEventListener" class="customevents.TransactionEventListener"/>
+      <bean id="WithdrawalEventPublisher" class="customevents.WithdrawalEventPublisher"/>
+      
+</beans>
+
